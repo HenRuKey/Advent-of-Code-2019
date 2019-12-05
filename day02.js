@@ -37,8 +37,6 @@ let readIntcodeSegment = (intcodeSegment, intcode) => {
     let b = intcode[intcodeSegment[2]];
     let resultAddress = intcodeSegment[3];
 
-    if (resultAddress == 0) { console.log("FOUND"); }
-
     switch (operation) {
         case 1:
             intcode[resultAddress] = a + b;
@@ -52,7 +50,7 @@ let readIntcodeSegment = (intcodeSegment, intcode) => {
     }
 
     return true;
-}
+};
 
 (() => {
     let intcode = getIntcode();
