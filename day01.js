@@ -21,7 +21,7 @@ let totalFuel = (masses) => {
         fuel += fuelByMass(masses[i]);
     }
     return fuel;
-}
+};
 
 /**
  * Calculates the total fuel required for a collection of masses, considering the mass of the fuel itself.
@@ -37,7 +37,7 @@ let fuelByFuel = (masses) => {
         }
     }
     return fuel;
-}
+};
 
 (() => {
     let numbers = readIntsFromFile('./puzzle_input/day01_input.txt');
