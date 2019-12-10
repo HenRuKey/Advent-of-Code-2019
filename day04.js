@@ -3,7 +3,7 @@
  * @param {int} num the number to test.
  * @return {boolean} true if the number passes the test.
  */
-let increaseTest = (num) => {
+const increaseTest = (num) => {
     let snum = JSON.stringify(num);
     for (let i = 0; i < snum.length; i++) {
         let numBase = parseInt(snum[i]);
@@ -22,7 +22,7 @@ let increaseTest = (num) => {
  * @param {int} num the number to test.
  * @return {boolean} true if the number passes the test.
  */
-let repeatTest = (num) => {
+const repeatTest = (num) => {
     let snum = JSON.stringify(num);
     let repeatFound = false;
     for (let i = 0; i < snum.length - 1; i++) {
@@ -39,7 +39,7 @@ let repeatTest = (num) => {
  * @param {int} num the number to test.
  * @return {boolean} true if the number passes the test.
  */
-let advancedRepeatTest = (num) => {
+const advancedRepeatTest = (num) => {
     if (!increaseTest(num) || !repeatTest(num)) { return false; }
     let snum = JSON.stringify(num);
     let repeats = 0;
@@ -65,7 +65,7 @@ let advancedRepeatTest = (num) => {
  * @param {int} max the maximum possible value.
  * @return {Array.<int>} the possible values that satisfy the test conditions.
  */
-let findPossibleValues = (min, max) => {
+const findPossibleValues = (min, max) => {
     let possibleValues = [];
     for (let i = min; i < max; i++) {
         if (increaseTest(i) && repeatTest(i)) {
@@ -80,7 +80,7 @@ let findPossibleValues = (min, max) => {
  * @param {Array.<int>} possibleValues the values that passed the initial test.
  * @return {Array.<int>} the subset of values that pass the advanced test.
  */
-let filterPossibleValues = (possibleValues) => {
+const filterPossibleValues = (possibleValues) => {
     return possibleValues.filter(value => {
         return advancedRepeatTest(value);
     });

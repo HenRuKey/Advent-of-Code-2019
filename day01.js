@@ -1,11 +1,11 @@
-import { readIntsFromFile } from './fileIO';
+import { readIntsFromFile } from './lib/fileIO';
 
 /**
  * Calculates the amount of fuel required for the given mass.
  * @param {int} mass the mass of the object.
  * @return {int} the amount of fuel required.
  */
-let fuelByMass = (mass) => {
+const fuelByMass = (mass) => {
     let roundedDown = mass - (mass % 3);
     return (roundedDown / 3) - 2;
 };
@@ -15,7 +15,7 @@ let fuelByMass = (mass) => {
  * @param {Array.<int>} masses the masses.
  * @return {int} the total amount of fuel required.
  */
-let totalFuel = (masses) => {
+const totalFuel = (masses) => {
     let fuel = 0;
     for (let i = 0; i < masses.length; i++) {
         fuel += fuelByMass(masses[i]);
@@ -28,7 +28,7 @@ let totalFuel = (masses) => {
  * @param {Array.<int>} masses the masses.
  * @return {int} the total amount of fuel required.
  */
-let fuelByFuel = (masses) => {
+const fuelByFuel = (masses) => {
     let fuel = 0;
     for (let i = 0; i < masses.length; i++) {
         let remainingFuel = masses[i];

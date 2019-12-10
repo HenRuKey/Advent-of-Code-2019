@@ -4,7 +4,7 @@ import { readIntsFromFile } from './lib/fileIO'
  * Retrieves intcode instruction from puzzle input file.
  * @return {Array.<int>} the intcode read from the puzze input file.
  */
-let getIntcode = () => {
+const getIntcode = () => {
     return readIntsFromFile('./puzzle_input/day02_input.txt', ',');
 };
 
@@ -16,7 +16,7 @@ let getIntcode = () => {
  * @note The given intcode array isn't modified. Instead, a copy is made.
  * @return {Array.<int>} the modified intcode.
  */
-let applyNounVerb = (noun, verb, intcode) => {
+const applyNounVerb = (noun, verb, intcode) => {
     let code = [...intcode];
     code[1] = noun;
     code[2] = verb;
@@ -27,7 +27,7 @@ let applyNounVerb = (noun, verb, intcode) => {
  * Executes a given array of intcode.
  * @param {Array.<int>} intcode the intcode to execute.
  */
-let executeIntcode = (intcode) => {
+const executeIntcode = (intcode) => {
     let startIndex = 0;
     while (readIntcodeSegment(intcode.slice(startIndex, startIndex + 4), intcode)) {
         startIndex += 4;
@@ -40,7 +40,7 @@ let executeIntcode = (intcode) => {
  * @param {Array.<int>} intcode the complete array of intcode.
  * @return {boolean} true if the operation is not a termination opcode.
  */
-let readIntcodeSegment = (intcodeSegment, intcode) => {
+const readIntcodeSegment = (intcodeSegment, intcode) => {
     let operation = intcodeSegment[0];
 
     if (operation == 99) { return false; }
@@ -70,7 +70,7 @@ let readIntcodeSegment = (intcodeSegment, intcode) => {
  * @param {Array.<int>} intcode the intcode to execute.
  * @return {int} 100 * noun + verb, where the noun and verb will acheive the given target.
  */
-let findNounVerb = (target, intcode) => {
+const findNounVerb = (target, intcode) => {
     let solutionFound = false;
     let solution;
     for (let noun = 0; noun < 99; noun++) {
@@ -98,5 +98,4 @@ let findNounVerb = (target, intcode) => {
 
     let solution = findNounVerb(19690720, originalIntcode);
     console.log(`Solution Part 2: ${ solution }`);
-
 })();
