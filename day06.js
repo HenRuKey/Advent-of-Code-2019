@@ -90,9 +90,10 @@ const numOfOrbits = (orbitTree) => {
 };
 
 /**
- * 
- * @param {*} orbit1 
- * @param {*} orbit2 
+ * Finds the number of steps to get from one orbit to another.
+ * @param {Orbit} orbit1 the source orbit.
+ * @param {Orbit} orbit2 the destination orbit.
+ * @return {int} the number of steps between the two orbits.
  */
 const orbitsBetween = (orbit1, orbit2) => {
     let orbit1Parents = orbit1.getParents();
