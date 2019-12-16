@@ -3,9 +3,9 @@ import { occurences } from './lib/util';
 
 /**
  * Reads pixels from file and places them into layers.
- * @param {*} filepath the puzzle file.
- * @param {*} width the width of each layer.
- * @param {*} height the height of each layer.
+ * @param {string} filepath the puzzle file.
+ * @param {int} width the width of each layer.
+ * @param {int} height the height of each layer.
  */
 const getLayers = (filepath, width, height) => {
     let pixels = [];
